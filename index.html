@@ -1,0 +1,39 @@
+<body>
+    <header>
+        <h1>🛒 Minha Loja Fantástica</h1>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#carrinho">Carrinho (<span id="contador-carrinho">0</span>)</a> 
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <main id="produtos">
+        <h2>Produtos em Destaque</h2>
+        
+        <div class="produto" data-nome="Camiseta Estilosa" data-preco="49.90">
+            <img src="images/produto1.jpg" alt="Camiseta Estilosa"> 
+            <h3>Camiseta Estilosa</h3>
+            <p class="preco">R$ 49,90</p>
+            <button class="add-carrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto" data-nome="Caneca do Dev" data-preco="29.90">
+            <img src="images/produto2.jpg" alt="Caneca do Dev"> 
+            <h3>Caneca do Dev</h3>
+            <p class="preco">R$ 29,90</p>
+            <button class="add-carrinho">Adicionar ao Carrinho</button>
+        </div>
+        
+    </main>
+
+    <section id="carrinho" style="text-align: center; padding: 20px;">
+        <h3>Seu Carrinho:</h3>
+        <ul id="lista-carrinho">
+            </ul>
+    </section>
+
+    <script src="script.js"></script> 
+</body>
+</html>
