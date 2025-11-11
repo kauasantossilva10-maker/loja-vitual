@@ -1,39 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👕 Loja de Moda e Acessórios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    <header>
-        <h1>🛒 Minha Loja Fantástica</h1>
-        <nav>
-            <a href="#">Início</a>
-            <a href="#produtos">Produtos</a>
-            <a href="#carrinho">Carrinho (<span id="contador-carrinho">0</span>)</a> 
-            <a href="#">Contato</a>
-        </nav>
+
+    <header class="cabecalho">
+        <h1>✨ Sua Loja Online de Moda</h1>
+        <p>Camisas, Sapatos e Relógios - Estilo para todos os momentos.</p>
     </header>
 
-    <main id="produtos">
-        <h2>Produtos em Destaque</h2>
+    <div class="container">
         
-        <div class="produto" data-nome="Camiseta Estilosa" data-preco="49.90">
-            <img src="tomsoderlund/stripe-link-checkout-nextjs.jpg" alt="Camiseta Estilosa"> 
-            <h3>Camiseta Estilosa</h3>
-            <p class="preco">R$ 49,90</p>
-            <button class="add-carrinho">Adicionar ao Carrinho</button>
-        </div>
+        <section class="categoria">
+            <h2>👕 Camisas</h2>
+            <div class="grade-produtos">
+                
+                <div class="produto">
+                    <img src="cq5dam.web.hebebed.1000.1000.avif" alt="Camisa Social Slim Fit">
+                    <h3>Camisa Social Branca</h3>
+                    <p class="preco">R$ 89,90</p>
+                    <button class="botao-comprar">Adicionar ao Carrinho</button>
+                </div>
 
-        <div class="produto" data-nome="Caneca do Dev" data-preco="29.90">
-            <img src="images/produto2.jpg" alt="Caneca do Dev"> 
-            <h3>Caneca do Dev</h3>
-            <p class="preco">R$ 29,90</p>
-            <button class="add-carrinho">Adicionar ao Carrinho</button>
-        </div>
-        
-    </main>
+                <div class="produto">
+                    <img src="camiseta-castrol-vintage-preta-baby-long-retro7891-dc619ae2cd9cd189b216642180535771-1024-1024.jpg" alt="Camiseta Estampada Vintage">
+                    <h3>Camiseta Estampa Retrô</h3>
+                    <p class="preco">R$ 49,90</p>
+                    <button class="botao-comprar">Adicionar ao Carrinho</button>
+                </div>
+                
+                </div>
+        </section>
 
-    <section id="carrinho" style="text-align: center; padding: 20px;">
-        <h3>Seu Carrinho:</h3>
-        <ul id="lista-carrinho">
-            </ul>
-    </section>
+        <section class="categoria">
+            <h2>👞 Sapatos</h2>
+            <div class="grade-produtos">
+                
+                <div class="produto">
+                    <img src="images.jpeg" alt="Tênis Casual Esportivo">
+                    <h3>Tênis Casual Leve</h3>
+                    <p class="preco">R$ 199,90</p>
+                    <button class="botao-comprar">Adicionar ao Carrinho</button>
+                </div>
 
-    <script src="script.js"></script> 
-</body>
-</html>
+                <div class="produto">
+                    <img src="31NZ5OiRLyL._AC_SY300_.jpg" alt="Sapato Social Couro">
+                    <h3>Sapato Social Clássico</h3>
+                    <p class="preco">R$ 249,90</p>
+                    <button class="botao-comprar">Adicionar ao Carrinho</button>
+                </div>
+                
+                </div>
+        </section>
+
+        <section class="categoria">
+            <h2>⌚ Relógios</h2>
+            <div class="grade-produtos">
+                
+                <div class="produto">
+                    <img src="2415DW1P_1.webp" alt="Relógio Digital Esportivo">
+                    <h3>Relógio Digital Prova d'Água</h3>
+                    <p class="preco">R$ 159,90</p>
+                    <button class="botao-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="produto">
+                    <img src="Relogio-Victorinox-Maverick-Chronograph-Unissex-241946-88691_1_set.webp" alt="Relógio Analógico de Couro">
+                     <h3>Relógio Digital de ouro </h3>
+                    <p class="preco">R$ 10000</p>
+                    <button class="botao-comprar">Adicionar ao Carrinho</button>
+                </div>

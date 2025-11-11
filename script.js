@@ -1,57 +1,33 @@
-let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+// Pega o elemento modal
+var modal = document.getElementById("modalImagens");
 
-function atualizarContador() {
-    document.getElementById('contador-carrinho').textContent = carrinho.length;
+// Pega a imagem dentro do modal
+var modalImg = document.getElementById("imagemAmpliada");
+
+// Pega o elemento para a descrição (caption)
+var captionText = document.getElementById("descricaoModal");
+
+/**
+ * Função para abrir o modal
+ * @param {string} src - O caminho da imagem que será exibida.
+ * @param {string} alt - O texto da descrição/título do produto.
+ */
+function abrirModal(src, alt) {
+  modal.style.display = "block"; // Torna o modal visível
+  modalImg.src = src; // Define a fonte da imagem ampliada
+  captionText.innerHTML = alt; // Define o texto da descrição
 }
 
-function renderizarCarrinho() {
-    const lista = document.getElementById('lista-carrinho');
-    lista.innerHTML = ''; // Limpa a lista antes de renderizar
-
-    if (carrinho.length === 0) {
-        lista.innerHTML = '<li>Seu carrinho está vazio.</li>';
-        return;
-    }
-
-    let total = 0;
-    carrinho.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
-        lista.appendChild(li);
-        total += item.preco;
-    });
-
-    const totalLi = document.createElement('li');
-    totalLi.innerHTML = `<strong>Total: R$ ${total.toFixed(2)}</strong>`;
-    lista.appendChild(totalLi);
+/**
+ * Função para fechar o modal (quando o 'x' é clicado)
+ */
+function fecharModal() {
+  modal.style.display = "none"; // Esconde o modal
 }
 
-function adicionarAoCarrinho(produtoElement) {
-    const nome = produtoElement.dataset.nome;
-    const preco = parseFloat(produtoElement.dataset.preco);
-
-    const item = { nome, preco };
-    carrinho.push(item);
-    
-    // Salva no armazenamento local (simulação de persistência)
-    localStorage.setItem('carrinho', JSON.stringify(carrinho)); 
-    
-    alert(`${nome} adicionado ao carrinho!`);
-    atualizarContador();
-    renderizarCarrinho();
+// Fechar o modal clicando em qualquer lugar fora da imagem
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
-
-// Adiciona o evento de clique aos botões
-document.addEventListener('DOMContentLoaded', () => {
-    const botoes = document.querySelectorAll('.add-carrinho');
-    botoes.forEach(button => {
-        button.addEventListener('click', (e) => {
-            const produtoDiv = e.target.closest('.produto');
-            adicionarAoCarrinho(produtoDiv);
-        });
-    });
-
-    // Inicializa o contador e renderiza o carrinho ao carregar
-    atualizarContador();
-    renderizarCarrinho();
-});
